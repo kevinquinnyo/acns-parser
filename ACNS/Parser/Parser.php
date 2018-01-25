@@ -1,15 +1,18 @@
 <?php
 
-namespace \ACNS\Parser;
+namespace ACNS\Parser;
+
+use ACNS\Parser\Engine\XML;
+use ACNS\Parser\Engine\Echelon;
 
 class Parser
 {
 	public $notice = null;
 
-	const PARSER_ENGINES = [
-		'\ACNS\Parser\Engine\XML',
-		'\ACNS\Parser\Engine\Echelon'
-	];
+    protected $engines = [
+        'ACNS\\Parser\\Engine\\XML',
+        'ACNS\\Parser\\Engine\\Echelon',
+    ];
 
 	public function __construct(string $notice)
 	{
@@ -18,7 +21,7 @@ class Parser
 
 	public function parse(): \ACNS\Parser\Result
 	{
-		foreach (PARSER_ENGINES as $engine) {
+		foreach ($this->engines as $engine) {
 
 			$acns = new $engine($this->notice);
 			$result = $acns->parse();

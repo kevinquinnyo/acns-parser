@@ -1,19 +1,28 @@
 <?php
 
-namespace \ACNS\Parser\Engine;
+namespace ACNS\Parser\Engine;
 
 class XML extends AbstractEngine
 {
-	public function parse(): \ACNS\Notice\Result
+    public static function sanitize_text($text) {
+        // TODO: make this do some sanitizing?
+
+        return $text;
+    }
+    public function __construct(string $notice)
+    {
+        $this->notice = $notice;
+    }
+	public function parse(): \ACNS\Parser\Result
 	{
-		if (! preg_match('/(\<\?xml.*<Infringement.*\/Infringement\>)/s', $this->notice_text, $match)) {
+		if (! preg_match('/(\<\?xml.*<Infringement.*\/Infringement\>)/s', $this->notice, $match)) {
 			# if we don't find the ACNS XML notice somewhere in the text, return failure
 			return \ACNS\Parser\Result::failure();
 		}
 
 		$acns_xml = $match[1];
 
-		$sanitized_xml = self::sanitize_text($this->acns_xml);
+		$sanitized_xml = self::sanitize_text($acns_xml);
 
 		if (! $xml = simplexml_load_string($sanitized_xml)) {
 			throw new \UnexpectedValueException('Unparsable ACNS XML');

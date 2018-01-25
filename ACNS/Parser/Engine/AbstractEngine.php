@@ -1,9 +1,8 @@
 <?php
+namespace ACNS\Parser\Engine;
 
-namespace \ACNS\Parser\Engine;
-
-abstract AbstractEngine
+abstract class AbstractEngine
 {
-	abstract public function parse(): \ACNS\Notice\Result;
+	abstract public function parse(): \ACNS\Parser\Result;
 }
 

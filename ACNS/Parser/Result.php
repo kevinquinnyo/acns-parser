@@ -1,6 +1,5 @@
 <?php
-
-namespace \ACNS\Parser;
+namespace ACNS\Parser;
 
 class Result
 {

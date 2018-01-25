@@ -1,0 +1,56 @@
+Some other stuff here
+
+foo
+
+bar
+
+- ------------- Infringement Details ----------------------------------
+Title:        The Last Ship
+Timestamp:    2018-01-25T16:37:11Z
+IP Address:   1.2.3.4
+Port:         55876
+Type:         BitTorrent
+Torrent Hash: 238041daa109e6b476e1a94b059e088c03a4a555
+Filename:     The.Last.Ship.S04E03.HDTV.x264-LOL[eztv].mkv
+Filesize:     309 MB
+- ---------------------------------------------------------------------
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<Infringement xmlns="http://www.acns.net/ACNS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.acns.net/ACNS http://www.acns.net/v1.2/ACNS2v1_2.xsd">
+  <Case>
+    <ID>97b8b857873e3211fcc1</ID>
+    <Status>Open</Status>
+    <Severity>Normal</Severity>
+  </Case>
+  <Complainant>
+    <Entity>Turner Network Television, Inc.</Entity>
+    <Contact>IP-Echelon - Compliance</Contact>
+    <Address>6715 Hollywood Blvd
+Los Angeles CA 90028
+United States of America</Address>
+    <Phone>+1 (310) 606 2747</Phone>
+    <Email>p2p@copyright.ip-echelon.com</Email>
+  </Complainant>
+  <Service_Provider>
+    <Entity>Some ISP, LLC</Entity>
+    <Email>isp_contact@example.com</Email>
+  </Service_Provider>
+  <Source>
+    <TimeStamp>2018-01-25T16:37:11Z</TimeStamp>
+    <IP_Address>1.2.3.4</IP_Address>
+    <Port>55876</Port>
+    <Type>BitTorrent</Type>
+    <SubType BaseType="P2P" Protocol="BITTORRENT"/>
+    <Number_Files>1</Number_Files>
+  </Source>
+  <Content>
+    <Item>
+      <TimeStamp>2018-01-25T16:37:11Z</TimeStamp>
+      <Title>The Last Ship</Title>
+      <FileName>The.Last.Ship.S04E03.HDTV.x264-LOL[eztv].mkv</FileName>
+      <FileSize>324610999</FileSize>
+      <Hash Type="SHA1">238041daa109e6b476e1a94b059e088c03a4a555</Hash>
+    </Item>
+  </Content>
+</Infringement>

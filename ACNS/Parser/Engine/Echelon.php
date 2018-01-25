@@ -1,12 +1,16 @@
 <?php
-
-namespace \ACNS\Parser\Engine;
+namespace ACNS\Parser\Engine;
 
 class Echelon extends AbstractEngine
 {
-	public function parse(): \ACNS\Notice\Result
+    public function __construct(string $notice)
+    {
+        $this->notice = $notice;
+    }
+
+	public function parse(): \ACNS\Parser\Result
 	{
-		if (! preg_match('/-+ Infringement Details -+<br>(.*?)-+<br>/s', $this->notice_text, $match)) {
+		if (! preg_match('/-+ Infringement Details -+<br>(.*?)-+<br>/s', $this->notice, $match)) {
             # if we don't find Echelon's version of the notice somewhere in the text, return failure
     		return \ACNS\Parser\Result::failure();
 		}
